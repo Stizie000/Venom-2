@@ -24,7 +24,7 @@ const store = makeInMemoryStore({
     })
 })
 
-let phoneNumber = "2349066528353"
+let phoneNumber = "263778331068"
 let owner = JSON.parse(fs.readFileSync('./database/owner.json'))
 
 const pairingCode = !!phoneNumber || process.argv.includes("--pairing-code")
@@ -33,7 +33,7 @@ const useMobile = process.argv.includes("--mobile")
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
 const question = (text) => new Promise((resolve) => rl.question(text, resolve))
          
-async function startXeonBotInc() {
+async function startXfBotInc() {
 //------------------------------------------------------
 let { version, isLatest } = await fetchLatestBaileysVersion()
 const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
@@ -150,7 +150,7 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
         else v = id === '0@s.whatsapp.net' ? {
                 id,
                 name: 'WhatsApp'
-            } : id === XeonBotInc.decodeJid(XeonBotInc.user.id) ?
+            } : id === XbfBotInc.decodeJid(XeonBotInc.user.id) ?
             XeonBotInc.user :
             (store.contacts[id] || {})
         return (withoutContact ? '' : v.name) || v.subject || v.verifiedName || PhoneNumber('+' + jid.replace('@s.whatsapp.net', '')).getNumber('international')
@@ -168,9 +168,9 @@ XeonBotInc.ev.on("connection.update",async  (s) => {
 			await delay(1999)
             console.log(chalk.yellow(`\n\n                  ${chalk.bold.blue(`[ ${botname} ]`)}\n\n`))
             console.log(chalk.cyan(`< ================================================== >`))
-	        console.log(chalk.magenta(`\n${themeemoji} YT CHANNEL: DeeCeeXxx`))
-            console.log(chalk.magenta(`${themeemoji} GITHUB: DeeCeeXxx `))
-            console.log(chalk.magenta(`${themeemoji} INSTAGRAM: @davidcyril002 `))
+	        console.log(chalk.magenta(`\n${themeemoji} YT CHANNEL: Herlone`))
+            console.log(chalk.magenta(`${themeemoji} GITHUB: Herlone`))
+            console.log(chalk.magenta(`${themeemoji} INSTAGRAM: @teslar05 `))
             console.log(chalk.magenta(`${themeemoji} WA NUMBER: ${owner}`))
             console.log(chalk.magenta(`${themeemoji} CREDIT: ${wm}\n`))
         }
@@ -186,7 +186,7 @@ XeonBotInc.ev.on("connection.update",async  (s) => {
     XeonBotInc.ev.on('creds.update', saveCreds)
     XeonBotInc.ev.on("messages.upsert",  () => { })
 
-    XeonBotInc.sendText = (jid, text, quoted = '', options) => XeonBotInc.sendMessage(jid, {
+    XeonBotInc.sendText = (jid, text, quoted = '', options) => XbfBotInc.sendMessage(jid, {
         text: text,
         ...options
     }, {
